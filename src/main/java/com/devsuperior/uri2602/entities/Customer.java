@@ -15,10 +15,12 @@ public class Customer {
 	private String city;
 	private String state;
 	private Double creditLimit;
-	
+
+	//constructor without parameters
 	public Customer() {
 	}
 
+	//constructor with parameters
 	public Customer(Long id, String name, String street, String city, String state, Double creditLimit) {
 		this.id = id;
 		this.name = name;
@@ -28,6 +30,7 @@ public class Customer {
 		this.creditLimit = creditLimit;
 	}
 
+	//get and set methods
 	public Long getId() {
 		return id;
 	}

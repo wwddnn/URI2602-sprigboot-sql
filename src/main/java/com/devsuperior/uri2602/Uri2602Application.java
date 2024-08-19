@@ -26,9 +26,22 @@ public class Uri2602Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		List<CustomerMinProjection> list = repository.search1("RS");
+		//return SQL
+		List<CustomerMinProjection> list = repository.search1("rs");
 		List<CustomerMinDTO> result1 = list.stream().map(x -> new CustomerMinDTO(x)).collect(Collectors.toList());
+
+		System.out.println("\n *** Resultado SQL raiz: ");
 		for (CustomerMinDTO obj : result1) {
+			System.out.println(obj);
+		}
+
+		System.out.println("\n\n");
+
+		//return JPQL
+		List<CustomerMinDTO> result2 = repository.search2("rs");
+
+		System.out.println("\n *** Resultado JPQL: ");
+		for (CustomerMinDTO obj : result2) {
 			System.out.println(obj);
 		}
 
